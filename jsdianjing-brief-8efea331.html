@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>极速电竞｜稳定入口 · 清晰体验</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #f1f2f6;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1e1e2a;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        .page {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Hero */
+        .hero {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 3.5rem 2.5rem 3rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e6e8ed;
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 550;
+            letter-spacing: -0.01em;
+            color: #1b1b2b;
+            margin-bottom: 0.75rem;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: #4a4a5a;
+            max-width: 660px;
+            margin: 0 auto 1.5rem;
+        }
+        .hero .tagline {
+            display: inline-block;
+            background: #eef0f5;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            color: #3b3b4b;
+            border: 1px solid #d9dce4;
+        }
+
+        /* 优势区 — 卡片网格 */
+        .strength-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.8rem;
+        }
+        .strength-card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.8rem 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            border: 1px solid #e2e5ec;
+        }
+        .strength-card .num {
+            font-size: 1.8rem;
+            font-weight: 450;
+            color: #3b4b6a;
+            line-height: 1;
+            margin-bottom: 0.2rem;
+        }
+        .strength-card h3 {
+            font-size: 1.1rem;
+            font-weight: 550;
+            margin-bottom: 0.3rem;
+        }
+        .strength-card p {
+            font-size: 0.92rem;
+            color: #4f4f62;
+        }
+
+        /* 说明区 */
+        .explain {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2.5rem 2.5rem;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.02);
+            border: 1px solid #e2e5ec;
+            margin-bottom: 2.5rem;
+        }
+        .explain h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            border-left: 5px solid #3b4b6a;
+            padding-left: 1rem;
+        }
+        .explain p {
+            margin-bottom: 1rem;
+            color: #2e2e3c;
+        }
+        .explain p:last-child {
+            margin-bottom: 0;
+        }
+        .explain .highlight {
+            background: #f5f6fa;
+            padding: 0.2em 0.5em;
+            border-radius: 6px;
+            font-weight: 450;
+            border: 1px solid #e0e3ed;
+        }
+
+        /* FAQ 摘要 */
+        .faq-summary {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2rem 2.5rem;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.02);
+            border: 1px solid #e2e5ec;
+            margin-bottom: 2.5rem;
+        }
+        .faq-summary h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        .faq-item {
+            margin-bottom: 1.2rem;
+        }
+        .faq-item strong {
+            display: block;
+            font-weight: 550;
+            color: #1b1b2b;
+            margin-bottom: 0.2rem;
+        }
+        .faq-item p {
+            color: #4a4a5a;
+            font-size: 0.95rem;
+        }
+        .faq-item:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 底部链接 */
+        .footer-link {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.6rem 2.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            border: 1px solid #e2e5ec;
+            text-align: center;
+            font-size: 1rem;
+            color: #2e2e3c;
+        }
+        .footer-link a {
+            color: #1d3b5c;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dashed #9baec7;
+        }
+        .footer-link a:hover {
+            border-bottom: 1px solid #1d3b5c;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            body { padding: 1rem; }
+            .hero { padding: 2.2rem 1.5rem; }
+            .hero h1 { font-size: 2rem; }
+            .explain { padding: 1.8rem 1.5rem; }
+            .faq-summary { padding: 1.5rem 1.5rem; }
+            .footer-link { padding: 1.2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero -->
+    <div class="hero">
+        <h1>极速电竞</h1>
+        <p>一个更安静的入口，一份更清晰的页面说明。从访问到浏览，保持稳定与轻快。</p>
+        <span class="tagline">稳定 · 直接 · 轻量</span>
+    </div>
+
+    <!-- 优势区 三卡片 -->
+    <div class="strength-grid">
+        <div class="strength-card">
+            <div class="num">01</div>
+            <h3>页面结构朴素</h3>
+            <p>不堆砌动效，内容优先。减少加载干扰，适合快速获取信息。</p>
+        </div>
+        <div class="strength-card">
+            <div class="num">02</div>
+            <h3>入口清晰</h3>
+            <p>主链接直接对应站点，省去中间跳转步骤，所见即所达。</p>
+        </div>
+        <div class="strength-card">
+            <div class="num">03</div>
+            <h3>日常可用</h3>
+            <p>没有复杂注册或多余门槛，打开即用，回归工具属性。</p>
+        </div>
+    </div>
+
+    <!-- 说明区 -->
+    <div class="explain">
+        <h2>关于这个页面</h2>
+        <p>这是一段站外介绍页，用来简单说明 <span class="highlight">极速电竞</span> 的定位与访问方式。很多站点会因为入口过多或者说明过于简短，导致第一次访问的人需要花费额外精力去确认。这个页面尝试做一次折中：用一段叙述把位置、特点、常见想法都梳理出来。</p>
+        <p>从技术视角看，保持页面稳定、减少意外重定向和模糊指示，本身就是一种对访问者的尊重。所以这里不放置闪烁横幅或催促性文案，只保留必要的引导。如果你正在寻找一个偏向简洁、不绕弯子的入口，那么下面可以直接前往。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-summary">
+        <h2>常见想法 · 简要</h2>
+        <div class="faq-item">
+            <strong>页面就这么简单？</strong>
+            <p>是的。初衷是提供一个不分散注意力的过渡页。主要内容在目标站点里，这里只负责指路和说明。</p>
+        </div>
+        <div class="faq-item">
+            <strong>为什么没有花哨的视觉效果？</strong>
+            <p>浅灰背景、卡片加细边框，是为了让信息层级更舒适，同时减少不必要的加载时间。风格上偏向安静和稳定。</p>
+        </div>
+        <div class="faq-item">
+            <strong>链接安全吗？</strong>
+            <p>页面内只有一个站外链接，指向 https://jsdianjing.com ，也就是 <strong>极速电竞</strong> 本身。你可以通过它直接到达。</p>
+        </div>
+    </div>
+
+    <!-- 底部链接（自然嵌在句子里） -->
+    <div class="footer-link">
+        <p>如果你想要直接前往，可以点击这里：<a href="https://jsdianjing.com">极速电竞</a>。页面内容保持克制但足够完整，更多信息可以在站内看到。</p>
+    </div>
+
+</div>
+</body>
+</html>
