@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>西甲赛事 · 直播信息导航</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f5f0;
+            font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+            line-height: 1.65;
+            color: #2e2b26;
+            padding: 2rem 1.2rem;
+        }
+
+        .page {
+            max-width: 1080px;
+            margin: 0 auto;
+            background: #fcfaf7;
+            border-radius: 24px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.03), 0 2px 8px rgba(0, 0, 0, 0.02);
+            padding: 2.8rem 2.4rem;
+        }
+
+        /* 顶部导航 */
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eae6de;
+            margin-bottom: 2.8rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .nav-brand {
+            font-weight: 580;
+            font-size: 1.25rem;
+            letter-spacing: -0.01em;
+            color: #3f3a33;
+        }
+
+        .nav-link {
+            font-size: 0.95rem;
+            color: #5d554c;
+            text-decoration: none;
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            background: transparent;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .nav-link:hover {
+            background: #eae3d9;
+            color: #26221e;
+        }
+
+        /* hero 区 */
+        .hero {
+            margin-bottom: 3.5rem;
+        }
+
+        .hero h1 {
+            font-weight: 500;
+            font-size: 2.4rem;
+            letter-spacing: -0.015em;
+            color: #221f1b;
+            line-height: 1.25;
+            max-width: 760px;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: #4d4842;
+            max-width: 700px;
+            margin-bottom: 1.8rem;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: #d9d0c4;
+            color: #201d19;
+            font-weight: 480;
+            padding: 0.7rem 1.6rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            border: 1px solid transparent;
+            transition: background 0.2s, border 0.2s;
+        }
+
+        .hero-cta:hover {
+            background: #cdc3b4;
+            border-color: #b0a596;
+        }
+
+        /* 核心介绍区 */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem 3rem;
+            margin-bottom: 3.8rem;
+        }
+
+        .intro-card {
+            background: #f3f0ea;
+            padding: 1.6rem 1.8rem;
+            border-radius: 18px;
+        }
+
+        .intro-card h2 {
+            font-size: 1.2rem;
+            font-weight: 540;
+            margin-bottom: 0.75rem;
+            color: #2b2722;
+            letter-spacing: -0.01em;
+        }
+
+        .intro-card p {
+            font-size: 0.96rem;
+            color: #3f3a34;
+        }
+
+        .intro-card .badge {
+            display: inline-block;
+            background: #ddd6cb;
+            padding: 0.2rem 0.6rem;
+            border-radius: 16px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #312d27;
+            margin-top: 0.5rem;
+        }
+
+        /* 场景模块 */
+        .scenes {
+            margin-bottom: 3.2rem;
+        }
+
+        .scenes-title {
+            font-size: 1.4rem;
+            font-weight: 480;
+            margin-bottom: 1.6rem;
+            color: #1f1c18;
+            border-left: 4px solid #c7bcac;
+            padding-left: 1rem;
+        }
+
+        .scene-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.8rem;
+        }
+
+        .scene-item {
+            background: #f9f7f3;
+            border: 1px solid #e7e0d6;
+            border-radius: 20px;
+            padding: 1.6rem 1.4rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .scene-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        .scene-item .emoji-marker {
+            display: block;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .scene-item h3 {
+            font-size: 1.05rem;
+            font-weight: 520;
+            margin-bottom: 0.4rem;
+            color: #27231e;
+        }
+
+        .scene-item p {
+            font-size: 0.92rem;
+            color: #3f3a34;
+        }
+
+        /* 提示 / 引用块 */
+        .note-block {
+            background: #efeae2;
+            padding: 1.5rem 2rem;
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            border-left: 5px solid #b2a696;
+            font-size: 0.95rem;
+            color: #2f2b26;
+        }
+
+        .note-block strong {
+            font-weight: 570;
+            color: #1d1a16;
+        }
+
+        /* FAQ 摘要 */
+        .faq-summary {
+            margin-bottom: 2rem;
+        }
+
+        .faq-summary h2 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #2b2722;
+        }
+
+        .faq-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid #e7dfd5;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 500;
+            color: #2f2a24;
+            margin-bottom: 0.25rem;
+        }
+
+        .faq-answer {
+            font-size: 0.92rem;
+            color: #4d4740;
+        }
+
+        /* 底部 */
+        .footer {
+            margin-top: 3rem;
+            padding-top: 1.6rem;
+            border-top: 1px solid #e3dbd0;
+            font-size: 0.85rem;
+            color: #6a6259;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .footer a {
+            color: #4f4942;
+            text-decoration: none;
+            border-bottom: 1px dotted #c2b9ad;
+        }
+
+        .footer a:hover {
+            color: #1d1a16;
+        }
+
+        /* 响应式 */
+        @media (max-width: 820px) {
+            .page {
+                padding: 1.8rem 1.2rem;
+            }
+
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+
+            .intro-grid {
+                grid-template-columns: 1fr;
+                gap: 1.6rem;
+            }
+
+            .scene-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 540px) {
+            body {
+                padding: 0.8rem;
+            }
+
+            .page {
+                padding: 1.2rem 1rem;
+                border-radius: 16px;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .scene-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 顶部导航 -->
+    <nav class="nav-bar">
+        <span class="nav-brand">⚽ 直播视野</span>
+        <div>
+            <a href="#" class="nav-link">赛程</a>
+            <a href="#" class="nav-link">球队</a>
+            <a href="#" class="nav-link">资讯</a>
+        </div>
+    </nav>
+
+    <!-- hero -->
+    <div class="hero">
+        <h1>西甲赛事 · 实时动态与观看指引</h1>
+        <p>从巴塞罗那到马德里，每一轮对决都牵动球迷神经。本页聚合实用的直播信息切入点，帮你快速定位感兴趣的场次与内容方向。</p>
+        <a href="https://qq-xijia.com" class="hero-cta">西甲直播</a>
+    </div>
+
+    <!-- 核心介绍 双栏 -->
+    <div class="intro-grid">
+        <div class="intro-card">
+            <h2>比赛节奏与数据</h2>
+            <p>西甲以技术流与高强度对抗著称，场均传球成功率、压迫次数等数据能反映球队状态。关注进攻三区传球及预期进球（xG）可更客观判断场面优劣。</p>
+            <span class="badge">控球率 · 射正比</span>
+        </div>
+        <div class="intro-card">
+            <h2>观看选择参考</h2>
+            <p>不同转播平台提供多机位、解说语言和实时数据层。根据网络环境与偏好选择清晰度或解说风格，能提升观赛连贯性。部分场次支持多视角切换。</p>
+            <span class="badge">多信号 · 延迟说明</span>
+        </div>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <div class="scenes">
+        <div class="scenes-title">常见观赛场景</div>
+        <div class="scene-grid">
+            <div class="scene-item">
+                <span class="emoji-marker">📱</span>
+                <h3>移动端快速跟进</h3>
+                <p>通勤或碎片时间，优先查看实时比分、关键事件与阵容变动。轻量级页面或推送通知可减少流量消耗。</p>
+            </div>
+            <div class="scene-item">
+                <span class="emoji-marker">💻</span>
+                <h3>桌面深度追踪</h3>
+                <p>多窗口同时关注积分榜变化、球员跑位热图以及赛后技术统计。适合进行战术复盘或数据对比。</p>
+            </div>
+            <div class="scene-item">
+                <span class="emoji-marker">📡</span>
+                <h3>多场次并行</h3>
+                <p>周六晚黄金时段常有4-5场同时开赛，借助列表或矩阵布局快速跳转，搭配画中画功能兼顾焦点战。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引用 / 提示块 -->
+    <div class="note-block">
+        <strong>提示：</strong> 部分直播源可能会有30–60秒延迟，且受所在地区网络影响。建议赛前测试画面流畅度，并留意官方开赛时间（通常以西班牙本地时间 CET/CEST 为准）。
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-summary">
+        <h2>常见问题简述</h2>
+        <div class="faq-item">
+            <div class="faq-question">西甲每轮通常什么时间开赛？</div>
+            <div class="faq-answer">大部分场次分布在周六至周一，北京时间晚间至次日凌晨。周五偶尔安排早场。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">如何获取更准确的直播链接？</div>
+            <div class="faq-answer">通过 <a href="https://qq-xijia.com" style="color:#3f3a34; text-decoration:underline; border-bottom:1px dotted #b2a696;">西甲直播</a> 聚合页可浏览不同信号源及对应说明，通常标注清晰度与语言。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">是否支持赛后回看？</div>
+            <div class="faq-answer">部分平台提供完整回放或集锦，一般赛后数小时上线。版权原因可能限制特定区域。</div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+        <span>信息参考 · 非官方页面</span>
+        <span><a href="https://qq-xijia.com">西甲直播</a> · 内容仅供个人参考</span>
+    </div>
+
+</div>
+</body>
+</html>
