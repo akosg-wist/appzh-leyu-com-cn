@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 稳定之选</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f7f9fc;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.7;
+      color: #1e2a3a;
+    }
+
+    /* 深色头图 */
+    .hero {
+      background: linear-gradient(145deg, #0d1b2a 0%, #1b2c40 100%);
+      color: #dce6f0;
+      padding: 4rem 2rem 3.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(100, 180, 255, 0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: #f0f5fa;
+      margin-bottom: 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 640px;
+      margin: 0 auto;
+      color: #b6cde0;
+      position: relative;
+      z-index: 1;
+      line-height: 1.6;
+    }
+
+    /* 浅色正文区 */
+    .content {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 3rem 2rem 2.5rem;
+      background-color: #ffffff;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    .section {
+      margin-bottom: 2.8rem;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section h2 {
+      font-size: 1.55rem;
+      font-weight: 500;
+      color: #0d1b2a;
+      margin-bottom: 1rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 2px solid #e4eaf1;
+    }
+
+    .section h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #1e3a5f;
+      margin-top: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .section p {
+      margin-bottom: 0.9rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin: 1.2rem 0 0.5rem;
+    }
+
+    .card {
+      background: #f2f6fa;
+      padding: 1.5rem 1.2rem;
+      border-radius: 12px;
+      border: 1px solid #e0e8f0;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 12px rgba(0, 20, 40, 0.06);
+    }
+
+    .card h4 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #0d1b2a;
+      margin-bottom: 0.4rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #2c4058;
+      margin-bottom: 0;
+    }
+
+    .highlight {
+      background: #f4f7fc;
+      padding: 1.2rem 1.5rem;
+      border-radius: 10px;
+      border-left: 4px solid #2d6a9f;
+      margin: 1.2rem 0;
+    }
+
+    .highlight p {
+      margin-bottom: 0;
+    }
+
+    /* 强调色链接 */
+    a {
+      color: #2d6a9f;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    a:hover {
+      color: #1a4a75;
+      border-bottom-color: #2d6a9f;
+    }
+
+    .faq-item {
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 500;
+      color: #0d1b2a;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item p {
+      margin: 0 0 0.1rem;
+      color: #2c4058;
+    }
+
+    .footer-note {
+      margin-top: 2.5rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #e4eaf1;
+      font-size: 0.92rem;
+      color: #5a6f84;
+      text-align: center;
+    }
+
+    /* 响应式 */
+    @media (max-width: 640px) {
+      .hero {
+        padding: 3rem 1.5rem 2.5rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .content {
+        padding: 2rem 1.2rem;
+      }
+      .section h2 {
+        font-size: 1.3rem;
+      }
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 深色头图 -->
+  <header class="hero">
+    <h1>爱游戏 · 入口简洁，内容扎实</h1>
+    <p>没有闪烁的催促，只有稳定的页面结构和清晰的信息路径。从第一次加载开始，就为你省去多余的试探。</p>
+  </header>
+
+  <!-- 浅色正文区 -->
+  <main class="content">
+
+    <!-- 摘要 / 定位 -->
+    <section class="section">
+      <h2>一份稳定的页面说明</h2>
+      <p>
+        许多时候，我们需要的不是一个充满弹窗和横幅的入口，而是一个能快速理解、安静使用的页面。<strong>爱游戏</strong> 的定位正是如此——它并不试图用夸张的标语吸引你，而是通过结构化的信息、克制的视觉和直接的导航，让你在几分钟内就能判断这个网站是否适合自己。
+      </p>
+      <p>
+        本文从产品说明的角度，梳理它的核心亮点、适用场景以及一些使用上的小建议。如果你正在寻找一个界面清爽、信息组织合理的游戏相关内容平台，不妨往下看看。
+      </p>
+    </section>
+
+    <!-- 亮点（卡片式） -->
+    <section class="section">
+      <h2>几个值得注意的亮点</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h4>· 信息层级清晰</h4>
+          <p>页面采用分区导航，分类和标签体系一目了然，减少不必要的跳转和重复点击。</p>
+        </div>
+        <div class="card">
+          <h4>· 内容更新有节奏</h4>
+          <p>不追求日更数量，而是保持稳定的发布节奏，每篇内容都经过基本的整理和校验。</p>
+        </div>
+        <div class="card">
+          <h4>· 访问路径直接</h4>
+          <p>从首页到具体内容，通常不超过三次点击。没有强制订阅或注册才能浏览的障碍。</p>
+        </div>
+        <div class="card">
+          <h4>· 视觉风格统一</h4>
+          <p>配色、字体、间距保持一致性，阅读时注意力不会被突兀的装饰打断。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 使用建议 + 场景 -->
+    <section class="section">
+      <h2>适合哪些场景？</h2>
+      <p>
+        根据多数用户的反馈，<a href="https://zhsite-i-game.com.cn">爱游戏</a> 在以下场景中尤其顺手：
+      </p>
+      <ul style="padding-left: 1.5rem; margin-bottom: 1rem; color: #1e2a3a;">
+        <li>想要快速查找某款游戏的资料或评测，而不被无关广告干扰；</li>
+        <li>利用碎片时间浏览分类内容，页面加载轻快，没有多余视频自动播放；</li>
+        <li>作为日常信息源之一，配合其他网站或社交媒体交叉参考。</li>
+      </ul>
+      <div class="highlight">
+        <p><strong>一点使用建议：</strong> 首次访问时，可以花一两分钟熟悉顶部分类标签和侧边导航。很多常用功能（如搜索、热门排行）都放在固定位置，习惯之后找东西会很快。另外，部分页面底部提供了相关内容的链接，适合顺着往下读。</p>
+      </div>
+    </section>
+
+    <!-- FAQ 摘要 -->
+    <section class="section">
+      <h2>常见疑问摘要</h2>
+      <div class="faq-item">
+        <strong>是否需要注册才能浏览？</strong>
+        <p>不需要。大部分内容对访客完全开放，只有少数互动功能（如评论、收藏）可能需要简单注册，但注册流程很轻量，且不强制。</p>
+      </div>
+      <div class="faq-item">
+        <strong>内容更新频率如何？</strong>
+        <p>保持每周 3–5 篇的稳定更新，涵盖新游介绍、经典回顾和行业动态。没有突然的信息轰炸。</p>
+      </div>
+      <div class="faq-item">
+        <strong>手机端体验怎么样？</strong>
+        <p>页面适配了手机屏幕，文字大小和按钮间距都经过调整，在移动设备上阅读和导航同样顺手。</p>
+      </div>
+      <p style="margin-top: 1rem; font-size: 0.95rem; color: #3d5a73;">
+        如果还有其他疑问，可以直接在站内找到“关于”页面，那里有更详细的说明。
+      </p>
+    </section>
+
+    <!-- 可信但克制的访问说明 -->
+    <section class="section">
+      <h2>关于访问的一点说明</h2>
+      <p>
+        <a href="https://zhsite-i-game.com.cn">爱游戏</a> 是一个以内容为先的网站，它不会在每次访问时弹出问卷或催促你收藏。你可以把它当作一个安静的信息角落——需要时打开，看完后关闭，没有任何心理负担。
+      </p>
+      <p>
+        当然，任何网站都有其局限性。如果你发现某些板块的信息不够新，或者某个分类的覆盖不够全，也属正常。它更适合作为你信息源中的一个稳定选项，而不是唯一依赖。保持多渠道获取的习惯，总是明智的。
+      </p>
+    </section>
+
+    <div class="footer-note">
+      <span>页面内容仅供说明参考 · 实际以网站为准</span>
+    </div>
+
+  </main>
+
+</body>
+</html>
